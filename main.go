@@ -13,12 +13,22 @@ func home(w http.ResponseWriter, r *http.Request) {
 
 }
 
+func showSnippet(w http.ResponseWriter, r *http.Request) {
+	w.Write([]byte("this is a show box"))
+
+}
+
+func createSnippet(w http.ResponseWriter, r *http.Request) {
+
+	w.Write([]byte("this is for creating a snippet box"))
+}
+
 func main() {
 
 	mux := http.NewServeMux() // using servemux instead of http handlers as we get more flexibilty by assigning our own variable
 	mux.HandleFunc("/", home)
-	//mux.HandleFunc("/snippet", showSnippet)
-	//mux.HandleFunc("/snippet/create", createSnippet)
+	mux.HandleFunc("/snippet", showSnippet)
+	mux.HandleFunc("/snippet/create", createSnippet)
 
 	log.Println("Starting server on :4000")
 	//every error in go is a variable. In our case, if error is port :4000 server start,
