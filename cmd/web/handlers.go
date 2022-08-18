@@ -18,6 +18,7 @@ func home(w http.ResponseWriter, r *http.Request) {
 
 		"ui/html/base.layout.tmpl",
 		"ui/html/home.layout.tmpl",
+		"ui/html/footer.partial.tmpl",
 	}
 	ts, err := template.ParseFiles(files...)
 	if err != nil {
