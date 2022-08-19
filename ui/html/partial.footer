@@ -1,0 +1,2 @@
+{{define "footer"}}
+<footer>Made with love by <a href='https://chetansawai.com'>Go</a></footer> {{end}}
